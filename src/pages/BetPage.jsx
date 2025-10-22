@@ -1,5 +1,6 @@
 ﻿import React, { useState, useEffect } from "react";
 import axios from "axios";
+import api from "../services/api";ssss
 
 const ParisSportifs = () => {
     const [matches, setMatches] = useState([]);
@@ -14,17 +15,15 @@ const ParisSportifs = () => {
     useEffect(() => {
         const fetchMatches = async () => {
             try {
-                setLoading(true);
-                const res = await axios.get("http://localhost:8000/api/matches");
-                setMatches(res.data);
-            } catch (err) {
-                console.error("Erreur lors du chargement des matchs :", err);
-            } finally {
-                setLoading(false);
+                const response = await api.get("/api/matches");
+                setMatches(response.data);
+            } catch (error) {
+                console.error("Erreur lors du chargement des matchs :", error);
             }
         };
         fetchMatches();
     }, []);
+
 
     // Sélectionner / désélectionner un pari
     const toggleSelection = (match, choice, odd) => {
