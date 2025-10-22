@@ -18,11 +18,13 @@ const ParisSportifs = () => {
                 const response = await api.get("/api/matches");
                 setMatches(response.data);
             } catch (error) {
-                console.error("Erreur lors du chargement des matchs :", error);
+                console.error("Erreur chargement matchs :", error);
             }
         };
+
         fetchMatches();
     }, []);
+
 
 
     // Sélectionner / désélectionner un pari
