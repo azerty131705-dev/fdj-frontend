@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from "react";
 import axios from "axios";
-import api from "../services/api";ssss
+import api from "../services/api";
 
 const ParisSportifs = () => {
     const [matches, setMatches] = useState([]);
