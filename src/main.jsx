@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./index.css";
 import BetPage from "./pages/BetPage";
-import LotoPage from "./pages/LotoPage";
 
 function App() {
     return (
